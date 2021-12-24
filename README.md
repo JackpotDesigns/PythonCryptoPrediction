@@ -1,4 +1,4 @@
-# PythonCryptoPrediction
+# Fluctuations in Crypto
 
 - 👋 Hi, I’m @jackyboy009
 - 🌱 I’m currently working on ny FYP.
