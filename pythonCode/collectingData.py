@@ -68,9 +68,11 @@ def datesToDf(crypto , interval , startDate , endDate=None):
         del line[6:]
 
     df = pd.DataFrame(bars, columns=['date', 'open', 'high', 'low', 'close' , 'volume'])
-    df.index = [dt.datetime.fromtimestamp(x /1000.0) for x in df.date]
-    df.drop(["date"], axis = 1, inplace = True) 
+    df['date']=(pd.to_datetime(df['date'],unit='ms')) 
 
+    #df.index = [dt.datetime.fromtimestamp(x /1000.0) for x in df.date]
+    #df.drop(["date"], axis = 1, inplace = True) 
+    #print(df.columns)
     return df
 
     
@@ -116,5 +118,5 @@ def getCryptoDates(day , month , year):
     print(allCryptoDates)
     return allCryptoDates
 
-ethDf = getCryptoData("XRP" , "1h" , "1 December, 1999")
-ethDf.to_csv('/Users/jackyboy/Desktop/FYP/cryptoData/xrpDataHistoryHour.csv')
+ethDf = getCryptoData("ETH" , "1h" , "1 December, 1999")
+ethDf.to_csv('/Users/jackyboy/Desktop/FYP/cryptoData/ethDataHistoryHour.csv' , index=False)
