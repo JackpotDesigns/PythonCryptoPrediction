@@ -4,6 +4,9 @@
 - 🌱 I’m currently working on ny FYP.
 - 📫 How to reach me 118365721@umail.ucc.ie
 
+
+git clone https://github.com/jackyboy009/PythonCryptoPrediction.git
+
 To Insall Python Packages To Run The Jupyter Notebook.
 - cd into the cloned folder.
 - python3 -m venv venv # on Linux/macOS (Create a Python virtual environment)
