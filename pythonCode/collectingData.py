@@ -1,5 +1,4 @@
 import os 
-import binanceApi
 from binance.client import Client
 import pandas as pd 
 import datetime as dt
@@ -51,8 +50,10 @@ def getCryptoData(cryptoAbbreviation , interval , userStartDate = None):
         dfList = [ datesToDf ( crypto , interval , str(dates[-1]) ) ]
 
     dfList = pd.concat(dfList)
-    return dfList
 
+    dfToCsv(dfList , cryptoAbbreviation , interval)
+
+    return dfList
 
 def datesToDf(crypto , interval , startDate , endDate=None):
 
@@ -118,5 +119,17 @@ def getCryptoDates(day , month , year):
     print(allCryptoDates)
     return allCryptoDates
 
-ethDf = getCryptoData("ETH" , "1h" , "1 December, 1999")
-ethDf.to_csv('/Users/jackyboy/Desktop/FYP/cryptoData/ethDataHistoryHour.csv' , index=False)
+def dfToCsv(df , cryptoAbbreviation , interval):
+
+    #Getting the current directory this file is in.
+    dir = os.path.dirname(__file__)
+
+    #Create the relative file path where you want to save the data to.
+    relative = ('../cryptoData/%s_%s_data.csv' % (cryptoAbbreviation , interval))
+
+    filename = os.path.join(dir, relative)
+
+    #Enter the relative path name you want to save the data to .
+    df.to_csv(filename , index=False)
+
+df = getCryptoData("ETH" , "15m" , "1 December, 1999")
