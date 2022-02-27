@@ -132,4 +132,4 @@ def dfToCsv(df , cryptoAbbreviation , interval):
     #Enter the relative path name you want to save the data to .
     df.to_csv(filename , index=False)
 
-df = getCryptoData("ETH" , "15m" , "1 December, 1999")
+df = getCryptoData("XRP" , "1h" , "1 December, 1999")
