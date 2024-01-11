@@ -1,7 +1,7 @@
 # Fluctuations in Crypto
 
 - 👋 Hi, I’m @jackyboy009
-- 🌱 I’m currently working on ny FYP.
+- 🌱 I’m currently working on my FYP.
 - 📫 How to reach me 118365721@umail.ucc.ie
 
 
